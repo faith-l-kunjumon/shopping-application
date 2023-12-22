@@ -7,6 +7,8 @@ packer {
   }
 }
 
+
+
 source "amazon-ebs" "shopping-prod" {
   ami_name      = local.image-name
   source_ami    = var.ami_id
