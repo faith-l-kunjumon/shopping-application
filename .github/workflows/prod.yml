@@ -26,7 +26,7 @@ jobs:
         working-directory: ./packer/
 
       - name: "packer validate"
-        run: packer validate -var-file="prod.pkrvars.hcl"
+        run: packer validate -var-file="prod.pkrvars.hcl" .
         working-directory: ./packer/
 
       - name: "format packer"
@@ -34,7 +34,7 @@ jobs:
         working-directory: ./packer/
 
       - name: "packer build"
-        run: packer build -var-file="prod.pkrvars.hcl"
+        run: packer build -var-file="prod.pkrvars.hcl" .
         working-directory: ./packer/
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.PROD_ACCESS_KEY }}
