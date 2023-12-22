@@ -19,7 +19,9 @@ variable "ami_id" {
   description = "id of ami"
 }
 
+
 locals {
-  image-timestamp = "${formatdate("DD-MM-YY-hh-mm", timestamp()})"
+  image-timestamp = "${formatdate("DD-MM-YY-hh-mm", timestamp())}"
   image-name      = "${var.project_name}-${var.project_env}-${local.image-timestamp}"
 }
+
